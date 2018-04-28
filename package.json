@@ -1,0 +1,33 @@
+{
+  "name": "mathjs-geo",
+  "version": "0.0.1",
+  "description": "Meisha front-end monitor to report the speed and errors of the web page.",
+  "main": "",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iampomelo/mathjs-geo.git"
+  },
+  "keywords": [
+    "mathjs",
+    "math",
+    "geo"
+  ],
+  "author": "iampomelo<iampomelo@foxmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iampomelo/mathjs-geo/issues"
+  },
+  "homepage": "https://github.com/iampomelo/mathjs-geo#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  }
+}
