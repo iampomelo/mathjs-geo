@@ -1,13 +1,7 @@
-import {
-  add,
-  sub,
-  multi,
-  div
-} from './math/calc';
+import * as mathCalc from './math/calc';
 
-export default {
-  add,
-  sub,
-  multi,
-  div
-};
+import * as mathPost from './math/post';
+
+import * as geo2d from './geo/2d';
+
+export default Object.assign(mathCalc, mathPost, geo2d);

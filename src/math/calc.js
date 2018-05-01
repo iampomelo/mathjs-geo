@@ -1,6 +1,11 @@
+/**
+ * 数学计算
+ */
+
 import {
   isType,
-  arrayMax
+  arrayMax,
+  errLog
 } from '../helper';
 
 /**
@@ -10,11 +15,15 @@ import {
  */
 const add = (...args) => {
   if (!args.length) {
+    errLog('add(sub) function need params.');
     return 0;
   }
   const r = new Array(args.length);
   for (let [key, value] of Object.entries(args)) {
-    if (!isType(value, 'Number')) return 0;
+    if (!isType(value, 'Number')) {
+      errLog('params of add(sub) function should be number.');
+      return 0;
+    }
     try {
       r[key] = value.toString().split('.')[1].length;
     } catch (e) {
@@ -48,12 +57,16 @@ const sub = (...args) => {
  */
 const multi = (...args) => {
   if (!args.length) {
+    errLog('multi function need params.');
     return 0;
   }
   const r = new Array(args.length);
   let m = 0, t = 1;
   for (let [key, value] of Object.entries(args)) {
-    if (!isType(value, 'Number')) return 0;
+    if (!isType(value, 'Number')) {
+      errLog('params of multi function should be number.');
+      return 0;
+    }
     try {
       r[key] = value.toString().split('.')[1].length;
     } catch (e) {
@@ -72,10 +85,15 @@ const multi = (...args) => {
  */
 const div = (...args) => {
   if (!args.length) {
+    errLog('div function need params.');
     return 0;
   }
   let d = args[0];
   for (let i = 0; i < args.length - 1; i++) {
+    if (!isType(args[i], 'Number') || !isType(args[i + 1], 'Number')) {
+      errLog('params of div function should be number.');
+      return 0;
+    }
     let r1, r2;
     try {
       r1 = d.toString().split('.')[1].length;
