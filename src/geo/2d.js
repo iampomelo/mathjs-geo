@@ -72,13 +72,13 @@ const getKB = function ([[x1, y1], [x2, y2]]) {
 };
 
 /**
- * 求过点[x,y]并与线段垂直的长度为l的线段两端点坐标(所求线段被点[x,y]平分)
+ * 求过点[x,y]并与直线垂直的长度为l的线段两端点坐标(所求线段被点[x,y]平分)
  * @param x 垂足x坐标
  * @param y 垂足y坐标
- * @param x1 线段端点1x坐标
- * @param y1 线段端点1y坐标
- * @param x2 线段端点2x坐标
- * @param y2 线段端点2y坐标
+ * @param x1 直线点1x坐标
+ * @param y1 直线点1y坐标
+ * @param x2 直线点2x坐标
+ * @param y2 直线点2y坐标
  * @param l 所求线段长度
  */
 const getVertical = function ([x, y], [[x1, y1], [x2, y2]], l) {
@@ -137,7 +137,7 @@ const getParallel = function ([x, y], [[x1, y1], [x2, y2]], l) {
 };
 
 /**
- * 求直线上距离点[x,y]的距离为l的点的坐标(点[x,y]也在直线上)
+ * 求直线上与点[x,y]的距离为l的点的坐标(点[x,y]也在直线上)
  * @param x 点x坐标
  * @param y 点y坐标
  * @param x1 直线点1x坐标
@@ -165,7 +165,7 @@ const getExtension = function ([x, y], [[x1, y1], [x2, y2]], l) {
 };
 
 /**
- * 获取两直线角度（从X轴正向逆时针旋转的角度）
+ * 求直线的角度（从X轴正向逆时针旋转的角度）
  * @param x1 直线点1x坐标
  * @param y1 直线点1y坐标
  * @param x2 直线点2x坐标
@@ -236,7 +236,7 @@ const getXFromY = function (y, [[x1, y1], [x2, y2]]) {
  * @param y4 线段端点4y坐标
  * @returns {*} 如果相交返回交点[x,y]，否则返回false
  */
-const lineCross = function ([x1, y1], [x2, y2], [x3, y3], [x4, y4]) {
+const lineCross = function ([[x1, y1], [x2, y2]], [[x3, y3], [x4, y4]]) {
   if (!isType([x1, y1, x2, y2, x3, y3, x4, y4], 'Number', true)) {
     errLog('lineCross function params error.');
     return;

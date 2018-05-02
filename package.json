@@ -1,8 +1,8 @@
 {
   "name": "mathjs-geo",
-  "version": "0.0.1",
-  "description": "Meisha front-end monitor to report the speed and errors of the web page.",
-  "main": "",
+  "version": "1.0.2",
+  "description": "A library of coordinate system math calculation. 坐标系数学计算方法库。",
+  "main": "./dist/mathjs-geo.min.js",
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },

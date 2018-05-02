@@ -5,7 +5,7 @@ import uglify from 'rollup-plugin-uglify';
 export default {
   input: 'src/main.js',
   output: {
-    file: 'dist/bundle.js',
+    file: 'dist/mathjs-geo.min.js',
     format: 'umd',
     name: 'mathgeo'
   },
